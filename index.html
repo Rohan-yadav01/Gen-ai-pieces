@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball Fact Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dragon Ball Fact</h1>
+        <p id="factDisplay">Click the button to get a fact!</p>
+        <button id="factButton">Get Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Dragon Ball was created by Akira Toriyama.",
+            "The series is loosely based on the classic Chinese novel Journey to the West.",
+            "The original Dragon Ball anime aired from 1986 to 1989.",
+            "Dragon Ball Z is the second and more popular anime series, adapting the later part of the manga.",
+            "The Super Saiyan transformation is one of the most iconic and recognizable elements of the series.",
+            "Goku's signature move is the Kamehameha, a powerful energy blast.",
+            "The Dragon Balls are mystical orbs that, when collected, summon a wish-granting dragon.",
+            "The World Martial Arts Tournament is a recurring event where fighters compete for the title of strongest.",
+            "Fusion is a technique where two characters merge into a single, more powerful being.",
+            "Besides Dragon Ball Z, the franchise includes sequels like Dragon Ball GT and Dragon Ball Super."
+        ];
+
+        const factButton = document.getElementById('factButton');
+        const factDisplay = document.getElementById('factDisplay');
+
+        factButton.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            factDisplay.textContent = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
